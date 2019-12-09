@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec  3 16:54:29 2019
+
+@author: rafael.gutierrez
+"""
+
+
+
+def dia_actual():
+    from datetime import datetime
+    fecha_dia_ahora = datetime.now()
+    test = fecha_dia_ahora.timetuple()
+    dia_semana = {0: 'Monday', 1:'Tuesday',2: 'Wednesday', 3:'Thursday',
+                  4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
+    for a in dia_semana:
+        if a == test.tm_wday:
+            return( dia_semana[a])
+   
+    
+
+dia_actual()    
+    
+
+
+def dias_birthday():
+    dia= int(input('ingrese el dia de nacimiento \n') )
+    mes= int(input('ingrese el mes de nacimiento b\n') )
+    # dia= 10
+    # mes = 2
+    import time
+    from datetime import date
+    today = date.today()
+    today == date.fromtimestamp(time.time())
+    my_birthday = date(today.year, mes, dia)
+    if my_birthday < today:
+        my_birthday = my_birthday.replace(year=today.year + 1)
+    time_to_birthday = abs(my_birthday - today)
+    print(time_to_birthday)
+
+ 
+dias_birthday()
+
